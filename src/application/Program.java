@@ -1,24 +1,28 @@
 package application;
 
-import entities.Client;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Program {
 	public static void main(String[] args) {
 		
-		Client c1 = new Client("Maria", "maria@gmail.com");
-		Client c2 = new Client("Maria", "maria@gmail.com");
+		Set<Integer> a = new TreeSet<>(Arrays.asList(0,2,4,5,6,8,10));
+		Set<Integer> b = new TreeSet<>(Arrays.asList(5,6,7,8,9,10));
 		
-		String s1 = new String("Test");
-		String s2 = new String("Test");
+		//Unior
+		Set<Integer> c = new TreeSet<>(a);
+		c.addAll(b);
+		System.out.println(c);
 		
-		String x1 = "Test";
-		String x2 = "Test";
+		//Intersection
+		Set<Integer> d = new TreeSet<>(a);
+		d.retainAll(b);
+		System.out.println(d);
 		
-		System.out.println(c1.hashCode());
-		System.out.println(c2.hashCode());
-		System.out.println(c1.equals(c2));
-		System.out.println(c1 == c2);
-		System.out.println(s1 == s2);
-		System.out.println(x1 == x2);
+		//Diference
+		Set<Integer> e = new TreeSet<>(a);
+		e.removeAll(b);
+		System.out.println(e);
 	}
 }
