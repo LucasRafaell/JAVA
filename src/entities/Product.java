@@ -59,6 +59,14 @@ public class Product {
 		return "Product [name=" + name	+ ", price=" + String.format("%.2f", price) + "]";
 			
 	}
+	
+	public static boolean staticProductPredicate(Product p) {		
+			return p.getPrice() >= 100.0;		
+	}
+	
+	public boolean nonStaticProductPredicate() {		
+		return price >= 100.0;		
+	}
 
 	@Override
 	public int hashCode() {
